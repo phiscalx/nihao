@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek 本地部署介绍</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        .note {
+            background-color: #ffcc00;
+            padding: 10px;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        /* footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        } */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DeepSeek 本地部署介绍</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>什么是 DeepSeek？</h2>
+            <p>DeepSeek（深度求索）是一家中国人工智能公司，专注于开发大型开源语言模型。它的模型具有强大的自然语言处理能力，在各个领域中取得了显著的成绩。</p>
+        </section>
+        <section>
+            <h2>本地部署的优势</h2>
+            <ul>
+                <li>更好的数据隐私保护：避免将敏感数据传输到外部服务器。</li>
+                <li>更高的性能：避免网络延迟，提高处理速度。</li>
+                <li>灵活性：根据需求自定义模型和训练参数。</li>
+            </ul>
+        </section>
+        <section>
+            <h2>DeepSeek 本地部署步骤</h2>
+            <p>以下是 DeepSeek 本地部署的基本步骤：</p>
+            <ol>
+                <li><strong>环境准备：</strong>确保机器具有足够的硬件资源，如高性能 CPU/GPU 和足够的内存。</li>
+                <li><strong>下载Ollama：</strong>AI模型平台</li>
+                <li><strong>下载 DeepSeek 模型：</strong>从 下载模型和相关依赖。</li>
+                <li><strong>配置WebUI：</strong>不必依赖于控制台</li>
+                <li><strong>运行模型：</strong>在本地机器上运行 DeepSeek 模型，并进行测试和优化。</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Ollama</h2>
+            <h3><strong>为什么是Ollama？</strong></h3>
+           <p>Ollama 提供简洁的 API 接口，开发者可以通过这些接口轻松调用语言模型，进行自然语言处理、生成文本、情感分析等任务。</p>
+            <ol>
+       <li>安装ollama <a href="https://ollama.com/download" target="_blank" style="color:red;">ollama官网下载链接</a></li>
+
+    <li> 在ollama 官网搜索deepseek-r1 <a href="https://ollama.com" target="_blank" style="color:red;">ollama官网</a></li>
+<li>命令行粘贴并运行命令，ollama run deepseek-r1:1.5b（根据电脑配置自主选择，建议4060不要超过8b,没有独显请谨慎下载)</li>
+    </ol>
+
+    </section>
+
+    <section>
+        <h2>可视化图文交互界面 Chatbox</h2>
+<p>虽然我们可以在本地正常使用 Deepseek 这个模型了，但是这个 AI 工具的面板是非常简陋的，很多人使用不习惯，这时我们就可以通过 Chatbox 这个可视化图文交互界面来使用它。</p>
+
+点击 Chatbox AI官网：<a href="https://chatboxai.app/zh" target="_blank" style="color:red;">https://chatboxai.app/zh</a>，Chatbox 虽然有本地客户端，但我们也可以直接使用网页版。
+        连接 本地模型，确保 Ollama 服务已运行。
+        <br>
+        <br>
+        在 ChatBox 设置中选择 ollama api，填写：
+        
+        <br>
+        API Endpoint: http://localhost:11434
+        <br>
+        API Key: 留空
+        <br>
+        Model Name: deepseek-r1（与 Ollama 模型名称一致）
+        <br>
+        也可使用AnythingLLM,LM Studio等软件
+    </section>    
+
+        <section>
+            <h2>注意事项</h2>
+            <div class="note">
+                
+                <p>检查ollama下载
+                    命令行输入ollama -v 
+                    浏览器访问http://localhost:11434/验证</p>
+                <p>远程访问，同一个局域网：
+                    Environment="OLLAMA_HOST=0.0.0.0"  
+                    Environment="OLLAMA_ORIGINS=*"
+                    <br>
+                    如果你有公网IP或内网穿透，就可以远距离访问你的本地模型
+                </p>
+                <p>如何打开命令行（Windows 用户按 Win + R，输入 cmd）</p>
+                <p>CSDN上有很多优秀文章，如果没跟上的可以参考，如https://blog.csdn.net/weixin_49684553/article/details/145537728</p>
+                <p>请确保部署过程中遵循 DeepSeek 的使用条款和条件，避免滥用模型。</p>
+            </div>
+        </section>
+    </main> 
+
+
+</body>
+</html>
